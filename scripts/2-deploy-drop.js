@@ -2,11 +2,13 @@ import { ethers } from "ethers";
 import { readFileSync } from "fs";
 import sdk from "./1-initialize-sdk.js";
 
-const app = sdk.getAppModule("0xd14e6D1901f4De7437BC6716A7d7332f51AdA887");
+const appModule = sdk.getAppModule(
+  "0xd14e6D1901f4De7437BC6716A7d7332f51AdA887"
+);
 
 (async () => {
   try {
-    const bundleDropModule = await app.deployBundleDropModule({
+    const bundleDropModule = await appModule.deployBundleDropModule({
       name: "GlobalHungerDAO Membership",
       description: "A DAO for people striving to end global hunger.",
       image: readFileSync("scripts/assets/globalhungerdao.png"),

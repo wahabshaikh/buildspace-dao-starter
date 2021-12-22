@@ -39,7 +39,7 @@ const tokenModule = sdk.getTokenModule(
     await tokenModule.transfer(voteModule.address, percent78);
 
     console.log("✅ Successfully transferred tokens to vote module");
-  } catch (err) {
-    console.error("failed to transfer tokens to vote module", err);
+  } catch (error) {
+    console.error("failed to transfer tokens to vote module", error);
   }
 })();

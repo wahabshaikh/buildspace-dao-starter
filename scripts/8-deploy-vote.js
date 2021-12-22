@@ -32,7 +32,7 @@ const appModule = sdk.getAppModule(
       "✅ Successfully deployed vote module, address:",
       voteModule.address
     );
-  } catch (err) {
-    console.log("Failed to deploy vote module", err);
+  } catch (error) {
+    console.log("Failed to deploy vote module", error);
   }
 })();

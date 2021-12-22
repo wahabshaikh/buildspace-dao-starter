@@ -1,11 +1,13 @@
 import sdk from "./1-initialize-sdk.js";
 
-const app = sdk.getAppModule("0xd14e6D1901f4De7437BC6716A7d7332f51AdA887");
+const appModule = sdk.getAppModule(
+  "0xd14e6D1901f4De7437BC6716A7d7332f51AdA887"
+);
 
 (async () => {
   try {
     // Deploy a standard ERC-20 contract.
-    const tokenModule = await app.deployTokenModule({
+    const tokenModule = await appModule.deployTokenModule({
       name: "GlobalHungerDAO Governance Token",
       symbol: "HUNGERFIGHTER",
     });
