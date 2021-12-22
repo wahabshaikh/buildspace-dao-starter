@@ -1,4 +1,8 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* html,
 body {
   margin: 0;
   font-family: Inter, sans-serif;
@@ -138,4 +142,4 @@ button:focus {
 button:disabled {
   opacity: 0.8;
   pointer-events: none;
-}
+} */
