@@ -2,11 +2,11 @@ import { ethers } from "ethers";
 import sdk from "./1-initialize-sdk.js";
 
 const voteModule = sdk.getVoteModule(
-  "0x233830119C2539C1e12AE8615cc78819BC97a36A"
+  "0x28B0dD1F1d4925C6bFA6cF89bBC7f07aA52F522F"
 );
 
 const tokenModule = sdk.getTokenModule(
-  "0x4c3A9483c65B4652aeA34EE7c89B8620715165fE"
+  "0xeb71623Aac588D7113FE7Fc5A5700e1FA92a6bF0"
 );
 
 (async () => {

@@ -9,9 +9,10 @@ const appModule = sdk.getAppModule(
 (async () => {
   try {
     const bundleDropModule = await appModule.deployBundleDropModule({
-      name: "GlobalHungerDAO Membership",
-      description: "A DAO for people striving to end global hunger.",
-      image: readFileSync("scripts/assets/globalhungerdao.png"),
+      name: "HungerFightersDAO Membership",
+      description:
+        "Hunger Fighters DAO is a community of passionate people fighting global hunger.",
+      image: readFileSync("scripts/assets/hunger-fighters-dao.png"),
       // We need to pass in the address of the person who will be receiving the proceeds from sales of nfts in the module.
       // We're planning on not charging people for the drop, so we'll pass in the 0x0 address
       // you can set this to your own wallet address if you want to charge for the drop.

@@ -2,7 +2,7 @@ import { readFileSync } from "fs";
 import sdk from "./1-initialize-sdk.js";
 
 const bundleDropModule = sdk.getBundleDropModule(
-  "0xeAbC04a6Ac8BF5C4eA4668F83DE7602A42529796"
+  "0xE27352d1899783c79aE82d819E3a176bCb47a63D"
 );
 
 (async () => {
@@ -10,8 +10,8 @@ const bundleDropModule = sdk.getBundleDropModule(
     await bundleDropModule.createBatch([
       {
         name: "Hunger Fighter",
-        description: "This NFT will give you access to GlobalHungerDAO!",
-        image: readFileSync("scripts/assets/hungerfighter.png"),
+        description: "This NFT will give you access to HungerFightersDAO!",
+        image: readFileSync("scripts/assets/hunger-fighter-nft.png"),
       },
     ]);
     console.log("✅ Successfully created a new NFT in the drop!");

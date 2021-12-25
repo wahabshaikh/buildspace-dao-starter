@@ -8,7 +8,7 @@ const appModule = sdk.getAppModule(
   try {
     // Deploy a standard ERC-20 contract.
     const tokenModule = await appModule.deployTokenModule({
-      name: "GlobalHungerDAO Governance Token",
+      name: "HungerFightersDAO Governance Token",
       symbol: "HUNGERFIGHTER",
     });
     console.log(

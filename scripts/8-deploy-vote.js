@@ -7,8 +7,8 @@ const appModule = sdk.getAppModule(
 (async () => {
   try {
     const voteModule = await appModule.deployVoteModule({
-      name: "GlobalHungerDAO's Epic Proposals",
-      votingTokenAddress: "0x4c3A9483c65B4652aeA34EE7c89B8620715165fE",
+      name: "HungerFightersDAO's Epic Proposals",
+      votingTokenAddress: "0xeb71623Aac588D7113FE7Fc5A5700e1FA92a6bF0",
 
       // After a proposal is created, when can members start voting?
       // For now, we set this to immediately.
