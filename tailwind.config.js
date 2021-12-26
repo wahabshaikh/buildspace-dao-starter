@@ -3,7 +3,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        title: ["Titan One", "cursive"],
+        sans: ["Montserrat", "sans-serif"],
       },
     },
   },

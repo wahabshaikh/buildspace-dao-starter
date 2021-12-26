@@ -7,6 +7,11 @@ import {
 import { ethers } from "ethers";
 import { useEffect, useMemo, useState } from "react";
 import shortenAddress from "../../utils/shortenAddress";
+import Container from "../Container";
+import Heading from "../Heading";
+import GradientText from "../GradientText";
+import GradientBorderContainer from "../GradientBorderContainer";
+import Button from "../Button";
 
 interface MemberScreenProps {
   address: string;
@@ -105,13 +110,24 @@ const MemberScreen = ({
   }, [proposals, address]);
 
   return (
-    <div className="member-page">
-      <h1>GlobalHungerDAO Member Page</h1>
-      <p>Congratulations on being a member</p>
-      <div>
-        <div>
-          <h2>Member List</h2>
-          <table className="card">
+    <Container>
+      <Heading>
+        <GradientText>Hunger Fighters DAO</GradientText>
+        <br />
+        Member Page
+      </Heading>
+      <p className="mt-4 font-semibold">
+        <GradientText variant="tertiary">
+          Congratulations on being a member!
+        </GradientText>{" "}
+        🎉
+      </p>
+      <section className="mt-8 max-w-3xl mx-auto grid md:grid-cols-2 gap-8 px-4">
+        <GradientBorderContainer variant="secondary">
+          <h2 className="text-xl font-bold font-title">
+            <GradientText variant="secondary">Member List</GradientText>
+          </h2>
+          <table className="mt-4 w-full text-left">
             <thead>
               <tr>
                 <th>Address</th>
@@ -129,10 +145,13 @@ const MemberScreen = ({
               })}
             </tbody>
           </table>
-        </div>
-        <div>
-          <h2>Active Proposals</h2>
+        </GradientBorderContainer>
+        <GradientBorderContainer variant="secondary">
+          <h2 className="text-xl font-bold font-title">
+            <GradientText variant="secondary">Active Proposals</GradientText>
+          </h2>
           <form
+            className="mt-4 space-y-4"
             onSubmit={async (e) => {
               e.preventDefault();
               e.stopPropagation();
@@ -219,9 +238,9 @@ const MemberScreen = ({
             }}
           >
             {proposals.map((proposal) => (
-              <div key={proposal.proposalId} className="card">
-                <h5>{proposal.description}</h5>
-                <div>
+              <div key={proposal.proposalId}>
+                <h5 className="font-medium">{proposal.description}</h5>
+                <div className="mt-1.5 flex space-x-4">
                   {proposal.votes.map((vote) => (
                     <div key={vote.type}>
                       <input
@@ -229,10 +248,13 @@ const MemberScreen = ({
                         id={proposal.proposalId + "-" + vote.type}
                         name={proposal.proposalId}
                         value={vote.type}
-                        //default the "abstain" vote to chedked
+                        //default the "abstain" vote to checked
                         defaultChecked={vote.type === 2}
                       />
-                      <label htmlFor={proposal.proposalId + "-" + vote.type}>
+                      <label
+                        htmlFor={proposal.proposalId + "-" + vote.type}
+                        className="ml-1.5 font-medium"
+                      >
                         {vote.label}
                       </label>
                     </div>
@@ -240,21 +262,26 @@ const MemberScreen = ({
                 </div>
               </div>
             ))}
-            <button disabled={isVoting || hasVoted} type="submit">
+            <Button
+              variant="secondary"
+              className="w-full px-4 py-2 font-semibold text-sm"
+              disabled={isVoting || hasVoted}
+              type="submit"
+            >
               {isVoting
                 ? "Voting..."
                 : hasVoted
                 ? "You Already Voted"
                 : "Submit Votes"}
-            </button>
-            <small>
+            </Button>
+            <small className="block text-xs text-center">
               This will trigger multiple transactions that you will need to
               sign.
             </small>
           </form>
-        </div>
-      </div>
-    </div>
+        </GradientBorderContainer>
+      </section>
+    </Container>
   );
 };
 

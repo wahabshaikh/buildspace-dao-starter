@@ -1,15 +1,22 @@
 import { useWeb3 } from "@3rdweb/hooks";
+import Button from "../Button";
+import Container from "../Container";
+import GradientText from "../GradientText";
+import Heading from "../Heading";
 
 const LandingScreen = () => {
   const { connectWallet } = useWeb3();
 
   return (
-    <div className="landing">
-      <h1>Welcome to GlobalHungerDAO</h1>
-      <button onClick={() => connectWallet("injected")} className="btn-hero">
+    <Container>
+      <Heading>
+        Welcome to <br />
+        <GradientText>Hunger Fighters DAO</GradientText>
+      </Heading>
+      <Button variant="secondary" onClick={() => connectWallet("injected")}>
         Connect your wallet
-      </button>
-    </div>
+      </Button>
+    </Container>
   );
 };
 

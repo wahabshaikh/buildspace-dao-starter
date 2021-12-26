@@ -1,6 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Titan+One&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gradient-primary {
+  @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500;
+}
+
+.gradient-secondary {
+  @apply bg-gradient-to-r from-pink-500 to-yellow-500;
+}
+
+.gradient-tertiary {
+  @apply bg-gradient-to-r from-green-500 via-cyan-500 to-indigo-500;
+}
 
 /* html,
 body {

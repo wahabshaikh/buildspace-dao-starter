@@ -1,5 +1,9 @@
 import { BundleDropModule } from "@3rdweb/sdk";
 import { useEffect, useState } from "react";
+import Button from "../Button";
+import Container from "../Container";
+import GradientText from "../GradientText";
+import Heading from "../Heading";
 
 interface MintScreenProps {
   address: string;
@@ -49,12 +53,20 @@ const MintScreen = ({
   };
 
   return (
-    <div className="mint-nft">
-      <h1>Mint your free GlobalHungerDAO Membership NFT</h1>
-      <button disabled={isClaiming} onClick={() => mintNft()}>
-        {isClaiming ? "Minting..." : "Mint your nft (FREE)"}
-      </button>
-    </div>
+    <Container>
+      <Heading>
+        Mint your free <br />
+        <GradientText>Hunger Fighters DAO</GradientText> <br />
+        Membership NFT
+      </Heading>
+      <Button
+        variant="secondary"
+        disabled={isClaiming}
+        onClick={() => mintNft()}
+      >
+        {isClaiming ? "Minting..." : "Mint your NFT (FREE)"}
+      </Button>
+    </Container>
   );
 };
 
