@@ -33,7 +33,7 @@ const MintScreen = ({
       .catch((error) => {
         console.error("failed to nft balance", error);
       });
-  }, [address]);
+  }, [address, bundleDropModule, claimNFT]);
 
   const mintNft = () => {
     setIsClaiming(true);

@@ -59,7 +59,7 @@ const MemberScreen = ({
       .catch((err) => {
         console.error("failed to get member list", err);
       });
-  }, []);
+  }, [bundleDropModule]);
 
   useEffect(() => {
     // Grab all the balances.
@@ -72,7 +72,7 @@ const MemberScreen = ({
       .catch((err) => {
         console.error("failed to get token amounts", err);
       });
-  }, []);
+  }, [tokenModule]);
 
   // Retreive all our existing proposals from the contract.
   useEffect(() => {
@@ -87,7 +87,7 @@ const MemberScreen = ({
       .catch((err) => {
         console.error("failed to get proposals", err);
       });
-  }, []);
+  }, [voteModule]);
 
   // We also need to check if the user already voted.
   useEffect(() => {
@@ -107,7 +107,7 @@ const MemberScreen = ({
       .catch((err) => {
         console.error("failed to check if wallet has voted", err);
       });
-  }, [proposals, address]);
+  }, [proposals, address, voteModule]);
 
   return (
     <Container>
